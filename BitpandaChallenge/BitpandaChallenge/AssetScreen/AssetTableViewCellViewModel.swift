@@ -20,7 +20,7 @@ struct AssetTableViewCellViewModel {
     }
 
     var symbol: String {
-        return asset.symbol
+        return asset.symbol.uppercased()
     }
 
     var averagePrice: String {
