@@ -14,8 +14,8 @@ class AssetViewController: UIViewController {
     private let tableView: UITableView = {
         let tableView = UITableView()
         tableView.backgroundColor = .clear
-//        tableView.separatorStyle = .none
-        tableView.allowsSelection = true
+        tableView.separatorStyle = .none
+        tableView.allowsSelection = false
         tableView.estimatedRowHeight = 50
         tableView.showsHorizontalScrollIndicator = false
         tableView.rowHeight = UITableView.automaticDimension

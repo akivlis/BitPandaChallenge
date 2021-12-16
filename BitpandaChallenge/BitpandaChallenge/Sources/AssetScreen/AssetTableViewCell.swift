@@ -7,19 +7,21 @@
 
 import UIKit
 import SnapKit
+import Kingfisher
+import SVGKit
 
 class AssetTableViewCell: UITableViewCell {
 
     private let iconView: UIImageView = {
         let view = UIImageView()
         view.contentMode = .scaleAspectFill
-        view.backgroundColor = .gray
+//        view.backgroundColor = .gray
         return view
     }()
 
     private let titleLabel: UILabel = {
         let label = UILabel()
-        label.font = .systemFont(ofSize: 20, weight: .bold)
+        label.font = .systemFont(ofSize: 18, weight: .bold)
         label.contentMode = .left
         return label
     }()
@@ -71,23 +73,28 @@ class AssetTableViewCell: UITableViewCell {
         fatalError("init(coder:) has not been implemented")
     }
 
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
-    }
-
     override func layoutSubviews() {
         super.layoutSubviews()
         iconView.layer.cornerRadius  = iconView.frame.width * 0.5
     }
 
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        iconView.image = nil
+    }
+
+    // MARK: - Public
+
     func bind(_ viewModel: AssetTableViewCellViewModel) {
         titleLabel.text = viewModel.title
         symbolLabel.text = viewModel.symbol
         priceLabel.text = viewModel.averagePrice
+
+        iconView.kf.setImage(with: viewModel.iconURL, options: [.processor(SVGImgProcessor())])
     }
 }
+
+// MARK: - Private
 
 private extension AssetTableViewCell {
 
@@ -105,14 +112,28 @@ private extension AssetTableViewCell {
     func setupConstraints() {
         containerStackView.snp.makeConstraints { make in
             make.leading.trailing.equalToSuperview()
-                .inset(10)
+                .inset(20)
             make.top.bottom.equalToSuperview()
-                .inset(8)
+                .inset(12)
         }
 
         iconView.snp.makeConstraints { make in
-            make.height.equalTo(50)
+            make.height.equalTo(40)
             make.width.equalTo(iconView.snp.height)
+        }
+    }
+}
+
+public struct SVGImgProcessor:ImageProcessor {
+    public var identifier: String = "com.appidentifier.webpprocessor"
+    public func process(item: ImageProcessItem, options: KingfisherParsedOptionsInfo) -> KFCrossPlatformImage? {
+        switch item {
+        case .image(let image):
+            print("already an image")
+            return image
+        case .data(let data):
+            let imsvg = SVGKImage(data: data)
+            return imsvg?.uiImage
         }
     }
 }
