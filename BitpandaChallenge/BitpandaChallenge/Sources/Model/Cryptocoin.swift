@@ -13,8 +13,14 @@ struct Cryptocoin {
     let icon: URL?
     let name: String
     let symbol: String
-    let averagePrice: String
+    let averagePrice: String?
 }
+
+// - MARK: Asset
+
+extension Cryptocoin: Asset {}
+
+// - MARK: Decodable
 
 extension Cryptocoin: Decodable {
 

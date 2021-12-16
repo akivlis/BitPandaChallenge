@@ -6,23 +6,26 @@
 //
 
 import Foundation
+import Combine
 
 struct TabBarViewModel {
 
-
-    init() {
-    }
+    private let assetsSubject = PassthroughSubject<[Asset], Never>()
+    private(set) lazy var assetsPublisher = assetsSubject
+        .eraseToAnyPublisher()
 
     func parseData() {
         if let path = Bundle.main.path(forResource: "Mastrerdata", ofType: "json") {
             do {
                 let data = try Data(contentsOf: URL(fileURLWithPath: path), options: .mappedIfSafe)
                 let decoder = JSONDecoder()
-                let jsonData = try decoder.decode(MasterData.self, from: data)
-                print("jsonData:\(jsonData)")
+                let masterData = try decoder.decode(MasterData.self, from: data)
+                print("masterData:\(masterData)")
+
+                let allAssets = masterData.data.attributes.cryptocoins
+                assetsSubject.send(allAssets)
             } catch let error {
-                print(error)
-                print("parse error: \(error.localizedDescription)")
+                print("parse error: \(error)")
             }
         } else {
             print("Invalid filename/path.")

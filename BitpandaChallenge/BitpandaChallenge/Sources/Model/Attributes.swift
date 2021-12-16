@@ -11,7 +11,7 @@ struct Attributes: Decodable {
 
     let cryptocoins: [Cryptocoin]
     let commodities: [Commodity]
-//    let fiats: [Fiat]
+    let fiats: [Fiat]
 }
 
 struct AttributesData: Decodable {

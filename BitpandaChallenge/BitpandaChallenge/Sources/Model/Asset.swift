@@ -15,9 +15,15 @@ protocol Asset {
 
     var name: String { get }
 
-    var symbol: URL? { get }
+    var symbol: String { get }
 
-    var averagePrice: Double? { get }
+    var averagePrice: String? { get }
+}
+
+extension Asset {
+    var averagePrice: String? {
+        return nil
+    }
 }
 
 enum AssetType: String,  Codable {

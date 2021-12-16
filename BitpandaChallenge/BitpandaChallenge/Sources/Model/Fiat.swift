@@ -15,6 +15,12 @@ struct Fiat {
     let symbol: String
 }
 
+// - MARK: Asset
+
+extension Fiat: Asset {}
+
+// - MARK: Decodable
+
 extension Fiat: Decodable {
 
     init(from decoder: Decoder) throws {

@@ -6,10 +6,15 @@
 //
 
 import UIKit
+import Combine
 
 class TabBarController: UITabBarController {
 
-    let viewModel = TabBarViewModel()
+    private var viewModel = TabBarViewModel()
+    private let assetViewController = AssetViewController()
+    private let walletViewController = WalletViewController()
+
+    private var subscriptions: Set<AnyCancellable> = []
 
     init() {
         super.init(nibName: nil, bundle: nil)
@@ -25,6 +30,7 @@ class TabBarController: UITabBarController {
 
         setupViews()
         setupConstraints()
+        setupObservables()
     }
 }
 
@@ -39,17 +45,28 @@ private extension TabBarController {
         borderView.backgroundColor = UIColor.gray
         tabBar.addSubview(borderView)
 
-        let assetViewController = UINavigationController(rootViewController: AssetViewController())
+        let assetNavigationController = UINavigationController(rootViewController: assetViewController)
         assetViewController.tabBarItem = Tab.asset.tabBarItem
 
-        let walletViewController = UINavigationController(rootViewController: WalletViewController())
+        let walletNavigationController = UINavigationController(rootViewController: walletViewController)
         walletViewController.tabBarItem = Tab.wallet.tabBarItem
 
-        self.viewControllers = [assetViewController, walletViewController]
-        self.selectedViewController = assetViewController
+        self.viewControllers = [assetNavigationController, walletNavigationController]
+        self.selectedViewController = assetNavigationController
     }
 
     func setupConstraints() {
 
+    }
+
+    func setupObservables() {
+
+        viewModel.assetsPublisher
+            .sink { [weak self ] assets in
+                guard let self = self else { return }
+                self.assetViewController.viewModel = AssetViewModel(assets: assets)
+            }
+            .store(in: &subscriptions)
+        
     }
 }
