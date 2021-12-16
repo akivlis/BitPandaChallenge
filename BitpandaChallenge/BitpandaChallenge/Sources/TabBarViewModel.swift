@@ -22,7 +22,7 @@ struct TabBarViewModel {
                 let masterData = try decoder.decode(MasterData.self, from: data)
                 print("masterData:\(masterData)")
 
-                let allAssets = masterData.data.attributes.cryptocoins
+                let allAssets = masterData.data.attributes.assets
                 assetsSubject.send(allAssets)
             } catch let error {
                 print("parse error: \(error)")

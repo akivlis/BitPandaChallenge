@@ -31,6 +31,8 @@
 		3D3FFF1F276B6FF800744A30 /* AssetTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D3FFF1E276B6FF800744A30 /* AssetTableViewCell.swift */; };
 		3D3FFF21276B70B900744A30 /* AssetTableViewCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D3FFF20276B70B900744A30 /* AssetTableViewCellViewModel.swift */; };
 		3D3FFF23276B732800744A30 /* Reusable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D3FFF22276B732700744A30 /* Reusable.swift */; };
+		3D3FFF25276B92EF00744A30 /* Wallet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D3FFF24276B92EF00744A30 /* Wallet.swift */; };
+		3D3FFF27276B958400744A30 /* FiatWallet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D3FFF26276B958400744A30 /* FiatWallet.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -77,6 +79,8 @@
 		3D3FFF1E276B6FF800744A30 /* AssetTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetTableViewCell.swift; sourceTree = "<group>"; };
 		3D3FFF20276B70B900744A30 /* AssetTableViewCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetTableViewCellViewModel.swift; sourceTree = "<group>"; };
 		3D3FFF22276B732700744A30 /* Reusable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reusable.swift; sourceTree = "<group>"; };
+		3D3FFF24276B92EF00744A30 /* Wallet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Wallet.swift; sourceTree = "<group>"; };
+		3D3FFF26276B958400744A30 /* FiatWallet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FiatWallet.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -183,6 +187,8 @@
 				3D3FFF102769E76100744A30 /* Commodity.swift */,
 				3D3FFF122769E76A00744A30 /* Fiat.swift */,
 				3D3FFF142769E7DE00744A30 /* Attributes.swift */,
+				3D3FFF24276B92EF00744A30 /* Wallet.swift */,
+				3D3FFF26276B958400744A30 /* FiatWallet.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -349,6 +355,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3D3FFF27276B958400744A30 /* FiatWallet.swift in Sources */,
 				3D3FFF1F276B6FF800744A30 /* AssetTableViewCell.swift in Sources */,
 				3D3FFEFC2759307800744A30 /* TabBarController.swift in Sources */,
 				3D3FFF132769E76A00744A30 /* Fiat.swift in Sources */,
@@ -364,6 +371,7 @@
 				3D3FFF23276B732800744A30 /* Reusable.swift in Sources */,
 				3D3FFF0F2769DF4700744A30 /* Asset.swift in Sources */,
 				3D3FFF0D2769DD8800744A30 /* Cryptocoin.swift in Sources */,
+				3D3FFF25276B92EF00744A30 /* Wallet.swift in Sources */,
 				3D3FFF112769E76100744A30 /* Commodity.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
