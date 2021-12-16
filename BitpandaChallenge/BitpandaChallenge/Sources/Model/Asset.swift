@@ -26,6 +26,6 @@ extension Asset {
     }
 }
 
-enum AssetType: String,  Codable {
+enum AssetType: String,  Codable, CaseIterable {
     case cryptocoin, commodity, fiat
 }

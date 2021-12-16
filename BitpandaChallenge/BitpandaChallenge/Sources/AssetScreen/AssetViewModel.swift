@@ -10,8 +10,8 @@ import RxCocoa
 
 struct AssetViewModel {
 
-    private let assets: BehaviorRelay<[Asset]>
-    private(set) lazy var items$ = self.assets
+    private let filteredAssets: BehaviorRelay<[Asset]>
+    private(set) lazy var items$ = self.filteredAssets
         .map {
             $0.map(AssetTableViewCellViewModel.init(asset:))
         }
@@ -19,11 +19,24 @@ struct AssetViewModel {
 
     // MARK: Properties
 
+    private let allAssets: [Asset]
 
     // MARK: Init
 
     init(assets: [Asset]) {
-        self.assets = BehaviorRelay(value: assets)
+        self.allAssets = assets
+        self.filteredAssets = BehaviorRelay(value: assets)
+    }
+
+    /// filter for assets based on its type
+    /// if type is nil, return all assets
+    func filter(for assetType: AssetType?) {
+        guard let assetType = assetType else {
+            filteredAssets.accept(allAssets)
+            return
+        }
+        let newAssets = allAssets.filter { $0.type == assetType }
+        filteredAssets.accept(newAssets)
     }
 
 }

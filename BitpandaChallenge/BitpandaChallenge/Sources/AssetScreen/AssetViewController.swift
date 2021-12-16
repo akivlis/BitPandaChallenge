@@ -23,6 +23,8 @@ class AssetViewController: UIViewController {
         return tableView
     }()
 
+    private let searchController = UISearchController()
+
     var viewModel: AssetViewModel? {
         didSet {
             tableView.reloadData()
@@ -50,6 +52,13 @@ private extension AssetViewController {
 
         navigationController?.navigationBar.prefersLargeTitles = true
 
+
+        searchController.searchBar.scopeButtonTitles = AssetType.allCases.map { $0.rawValue.capitalized }
+        //["Cryptocoins", "Commodities", "Fiats"]
+        searchController.searchBar.delegate = self
+        searchController.searchResultsUpdater = self
+        navigationItem.searchController = searchController
+
         view.addSubview(tableView)
     }
 
@@ -68,3 +77,16 @@ private extension AssetViewController {
     }
 }
 
+extension AssetViewController: UISearchBarDelegate, UISearchResultsUpdating {
+    func updateSearchResults(for searchController: UISearchController) {
+        if !searchController.isActive {
+            print("😈 cancelled")
+            viewModel?.filter(for: nil)
+        }
+    }
+
+
+    func searchBar(_ searchBar: UISearchBar, selectedScopeButtonIndexDidChange selectedScope: Int) {
+        viewModel?.filter(for: AssetType.allCases[selectedScope])
+    }
+}
