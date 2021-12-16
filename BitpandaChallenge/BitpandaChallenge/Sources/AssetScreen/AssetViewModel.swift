@@ -28,7 +28,7 @@ struct AssetViewModel {
         self.filteredAssets = BehaviorRelay(value: assets)
     }
 
-    /// filter for assets based on its type
+    /// Filter for assets based on its type
     /// if type is nil, return all assets
     func filter(for assetType: AssetType?) {
         guard let assetType = assetType else {
@@ -38,5 +38,4 @@ struct AssetViewModel {
         let newAssets = allAssets.filter { $0.type == assetType }
         filteredAssets.accept(newAssets)
     }
-
 }

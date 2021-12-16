@@ -54,7 +54,6 @@ private extension AssetViewController {
 
 
         searchController.searchBar.scopeButtonTitles = AssetType.allCases.map { $0.rawValue.capitalized }
-        //["Cryptocoins", "Commodities", "Fiats"]
         searchController.searchBar.delegate = self
         searchController.searchResultsUpdater = self
         navigationItem.searchController = searchController
@@ -80,7 +79,6 @@ private extension AssetViewController {
 extension AssetViewController: UISearchBarDelegate, UISearchResultsUpdating {
     func updateSearchResults(for searchController: UISearchController) {
         if !searchController.isActive {
-            print("😈 cancelled")
             viewModel?.filter(for: nil)
         }
     }
