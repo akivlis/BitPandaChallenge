@@ -9,12 +9,24 @@
 /* Begin PBXBuildFile section */
 		3D3FFECC27592F7D00744A30 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D3FFECB27592F7D00744A30 /* AppDelegate.swift */; };
 		3D3FFECE27592F7D00744A30 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D3FFECD27592F7D00744A30 /* SceneDelegate.swift */; };
-		3D3FFED027592F7D00744A30 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D3FFECF27592F7D00744A30 /* ViewController.swift */; };
 		3D3FFED527592F7E00744A30 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3D3FFED427592F7E00744A30 /* Assets.xcassets */; };
 		3D3FFED827592F7E00744A30 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3D3FFED627592F7E00744A30 /* LaunchScreen.storyboard */; };
 		3D3FFEE327592F7E00744A30 /* BitpandaChallengeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D3FFEE227592F7E00744A30 /* BitpandaChallengeTests.swift */; };
 		3D3FFEED27592F7E00744A30 /* BitpandaChallengeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D3FFEEC27592F7E00744A30 /* BitpandaChallengeUITests.swift */; };
 		3D3FFEEF27592F7E00744A30 /* BitpandaChallengeUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D3FFEEE27592F7E00744A30 /* BitpandaChallengeUITestsLaunchTests.swift */; };
+		3D3FFEFC2759307800744A30 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D3FFEFB2759307800744A30 /* TabBarController.swift */; };
+		3D3FFEFF275930FB00744A30 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 3D3FFEFE275930FB00744A30 /* SnapKit */; };
+		3D3FFF032760CE7900744A30 /* AssetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D3FFF022760CE7900744A30 /* AssetViewController.swift */; };
+		3D3FFF052760CE8D00744A30 /* WalletViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D3FFF042760CE8D00744A30 /* WalletViewController.swift */; };
+		3D3FFF072760CF5C00744A30 /* Tab.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D3FFF062760CF5C00744A30 /* Tab.swift */; };
+		3D3FFF0A27666AD600744A30 /* RxDataSources in Frameworks */ = {isa = PBXBuildFile; productRef = 3D3FFF0927666AD600744A30 /* RxDataSources */; };
+		3D3FFF0D2769DD8800744A30 /* Cryptocoin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D3FFF0C2769DD8800744A30 /* Cryptocoin.swift */; };
+		3D3FFF0F2769DF4700744A30 /* Asset.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D3FFF0E2769DF4700744A30 /* Asset.swift */; };
+		3D3FFF112769E76100744A30 /* Commodity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D3FFF102769E76100744A30 /* Commodity.swift */; };
+		3D3FFF132769E76A00744A30 /* Fiat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D3FFF122769E76A00744A30 /* Fiat.swift */; };
+		3D3FFF152769E7DE00744A30 /* Attributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D3FFF142769E7DE00744A30 /* Attributes.swift */; };
+		3D3FFF172769E90500744A30 /* TabBarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D3FFF162769E90500744A30 /* TabBarViewModel.swift */; };
+		3D3FFF19276A2AFD00744A30 /* Mastrerdata.json in Resources */ = {isa = PBXBuildFile; fileRef = 3D3FFF18276A2AFD00744A30 /* Mastrerdata.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,7 +50,6 @@
 		3D3FFEC827592F7D00744A30 /* BitpandaChallenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BitpandaChallenge.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3D3FFECB27592F7D00744A30 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3D3FFECD27592F7D00744A30 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		3D3FFECF27592F7D00744A30 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		3D3FFED427592F7E00744A30 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3D3FFED727592F7E00744A30 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3D3FFED927592F7E00744A30 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -47,6 +58,17 @@
 		3D3FFEE827592F7E00744A30 /* BitpandaChallengeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BitpandaChallengeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3D3FFEEC27592F7E00744A30 /* BitpandaChallengeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BitpandaChallengeUITests.swift; sourceTree = "<group>"; };
 		3D3FFEEE27592F7E00744A30 /* BitpandaChallengeUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BitpandaChallengeUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		3D3FFEFB2759307800744A30 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
+		3D3FFF022760CE7900744A30 /* AssetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetViewController.swift; sourceTree = "<group>"; };
+		3D3FFF042760CE8D00744A30 /* WalletViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletViewController.swift; sourceTree = "<group>"; };
+		3D3FFF062760CF5C00744A30 /* Tab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tab.swift; sourceTree = "<group>"; };
+		3D3FFF0C2769DD8800744A30 /* Cryptocoin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cryptocoin.swift; sourceTree = "<group>"; };
+		3D3FFF0E2769DF4700744A30 /* Asset.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Asset.swift; sourceTree = "<group>"; };
+		3D3FFF102769E76100744A30 /* Commodity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Commodity.swift; sourceTree = "<group>"; };
+		3D3FFF122769E76A00744A30 /* Fiat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fiat.swift; sourceTree = "<group>"; };
+		3D3FFF142769E7DE00744A30 /* Attributes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Attributes.swift; sourceTree = "<group>"; };
+		3D3FFF162769E90500744A30 /* TabBarViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewModel.swift; sourceTree = "<group>"; };
+		3D3FFF18276A2AFD00744A30 /* Mastrerdata.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Mastrerdata.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +76,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3D3FFEFF275930FB00744A30 /* SnapKit in Frameworks */,
+				3D3FFF0A27666AD600744A30 /* RxDataSources in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -97,12 +121,12 @@
 		3D3FFECA27592F7D00744A30 /* BitpandaChallenge */ = {
 			isa = PBXGroup;
 			children = (
-				3D3FFECB27592F7D00744A30 /* AppDelegate.swift */,
-				3D3FFECD27592F7D00744A30 /* SceneDelegate.swift */,
-				3D3FFECF27592F7D00744A30 /* ViewController.swift */,
+				3D3FFF1B276A2B2400744A30 /* Sources */,
 				3D3FFED427592F7E00744A30 /* Assets.xcassets */,
-				3D3FFED627592F7E00744A30 /* LaunchScreen.storyboard */,
+				3D3FFF002760CE4900744A30 /* AssetScreen */,
 				3D3FFED927592F7E00744A30 /* Info.plist */,
+				3D3FFED627592F7E00744A30 /* LaunchScreen.storyboard */,
+				3D3FFF1A276A2B0500744A30 /* Resources */,
 			);
 			path = BitpandaChallenge;
 			sourceTree = "<group>";
@@ -124,6 +148,56 @@
 			path = BitpandaChallengeUITests;
 			sourceTree = "<group>";
 		};
+		3D3FFF002760CE4900744A30 /* AssetScreen */ = {
+			isa = PBXGroup;
+			children = (
+				3D3FFF022760CE7900744A30 /* AssetViewController.swift */,
+			);
+			path = AssetScreen;
+			sourceTree = "<group>";
+		};
+		3D3FFF012760CE5B00744A30 /* WalletScreen */ = {
+			isa = PBXGroup;
+			children = (
+				3D3FFF042760CE8D00744A30 /* WalletViewController.swift */,
+			);
+			path = WalletScreen;
+			sourceTree = "<group>";
+		};
+		3D3FFF0B2769DD7100744A30 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				3D3FFF0C2769DD8800744A30 /* Cryptocoin.swift */,
+				3D3FFF0E2769DF4700744A30 /* Asset.swift */,
+				3D3FFF102769E76100744A30 /* Commodity.swift */,
+				3D3FFF122769E76A00744A30 /* Fiat.swift */,
+				3D3FFF142769E7DE00744A30 /* Attributes.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		3D3FFF1A276A2B0500744A30 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				3D3FFF18276A2AFD00744A30 /* Mastrerdata.json */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		3D3FFF1B276A2B2400744A30 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				3D3FFF012760CE5B00744A30 /* WalletScreen */,
+				3D3FFECB27592F7D00744A30 /* AppDelegate.swift */,
+				3D3FFECD27592F7D00744A30 /* SceneDelegate.swift */,
+				3D3FFF062760CF5C00744A30 /* Tab.swift */,
+				3D3FFEFB2759307800744A30 /* TabBarController.swift */,
+				3D3FFF162769E90500744A30 /* TabBarViewModel.swift */,
+				3D3FFF0B2769DD7100744A30 /* Model */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -140,6 +214,10 @@
 			dependencies = (
 			);
 			name = BitpandaChallenge;
+			packageProductDependencies = (
+				3D3FFEFE275930FB00744A30 /* SnapKit */,
+				3D3FFF0927666AD600744A30 /* RxDataSources */,
+			);
 			productName = BitpandaChallenge;
 			productReference = 3D3FFEC827592F7D00744A30 /* BitpandaChallenge.app */;
 			productType = "com.apple.product-type.application";
@@ -212,6 +290,10 @@
 				Base,
 			);
 			mainGroup = 3D3FFEBF27592F7D00744A30;
+			packageReferences = (
+				3D3FFEFD275930FB00744A30 /* XCRemoteSwiftPackageReference "SnapKit" */,
+				3D3FFF0827666AD600744A30 /* XCRemoteSwiftPackageReference "RxDataSources" */,
+			);
 			productRefGroup = 3D3FFEC927592F7D00744A30 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -230,6 +312,7 @@
 			files = (
 				3D3FFED827592F7E00744A30 /* LaunchScreen.storyboard in Resources */,
 				3D3FFED527592F7E00744A30 /* Assets.xcassets in Resources */,
+				3D3FFF19276A2AFD00744A30 /* Mastrerdata.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -254,9 +337,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3D3FFED027592F7D00744A30 /* ViewController.swift in Sources */,
+				3D3FFEFC2759307800744A30 /* TabBarController.swift in Sources */,
+				3D3FFF132769E76A00744A30 /* Fiat.swift in Sources */,
+				3D3FFF032760CE7900744A30 /* AssetViewController.swift in Sources */,
 				3D3FFECC27592F7D00744A30 /* AppDelegate.swift in Sources */,
+				3D3FFF172769E90500744A30 /* TabBarViewModel.swift in Sources */,
 				3D3FFECE27592F7D00744A30 /* SceneDelegate.swift in Sources */,
+				3D3FFF052760CE8D00744A30 /* WalletViewController.swift in Sources */,
+				3D3FFF072760CF5C00744A30 /* Tab.swift in Sources */,
+				3D3FFF152769E7DE00744A30 /* Attributes.swift in Sources */,
+				3D3FFF0F2769DF4700744A30 /* Asset.swift in Sources */,
+				3D3FFF0D2769DD8800744A30 /* Cryptocoin.swift in Sources */,
+				3D3FFF112769E76100744A30 /* Commodity.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -610,6 +702,38 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		3D3FFEFD275930FB00744A30 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.1;
+			};
+		};
+		3D3FFF0827666AD600744A30 /* XCRemoteSwiftPackageReference "RxDataSources" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/RxSwiftCommunity/RxDataSources.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		3D3FFEFE275930FB00744A30 /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 3D3FFEFD275930FB00744A30 /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
+		};
+		3D3FFF0927666AD600744A30 /* RxDataSources */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 3D3FFF0827666AD600744A30 /* XCRemoteSwiftPackageReference "RxDataSources" */;
+			productName = RxDataSources;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 3D3FFEC027592F7D00744A30 /* Project object */;
 }
