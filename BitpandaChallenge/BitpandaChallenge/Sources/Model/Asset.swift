@@ -13,6 +13,8 @@ protocol Asset {
 
     var icon: URL? { get }
 
+    var darkIcon: URL? { get }
+
     var name: String { get }
 
     var symbol: String { get }

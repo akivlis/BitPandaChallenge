@@ -11,6 +11,7 @@ struct Commodity {
 
     let type: AssetType = .commodity
     let icon: URL?
+    let darkIcon: URL?
     let name: String
     let symbol: String
     let averagePrice: String?
@@ -32,6 +33,8 @@ extension Commodity: Decodable {
         averagePrice = try attributes.decode(String.self, forKey: .averagePrice)
         let iconString = try attributes.decode(String.self, forKey: .icon)
         icon = URL(string: iconString)
+        let darkIconString = try attributes.decode(String.self, forKey: .darkIcon)
+        darkIcon = URL(string: darkIconString)
     }
 
     private enum CodingKeys: String, CodingKey {
@@ -42,6 +45,7 @@ extension Commodity: Decodable {
     private enum AttributesCodingKeys: String, CodingKey {
         case symbol
         case icon = "logo"
+        case darkIcon = "logo_dark"
         case name
         case averagePrice = "avg_price"
     }

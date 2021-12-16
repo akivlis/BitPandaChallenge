@@ -15,6 +15,10 @@ struct AssetTableViewCellViewModel {
         return asset.icon
     }
 
+    var darkIconURL: URL? {
+        return asset.darkIcon
+    }
+
     var title: String {
         return asset.name
     }

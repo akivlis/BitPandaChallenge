@@ -52,10 +52,10 @@ private extension AssetViewController {
 
         navigationController?.navigationBar.prefersLargeTitles = true
 
-
         searchController.searchBar.scopeButtonTitles = AssetType.allCases.map { $0.rawValue.capitalized }
         searchController.searchBar.delegate = self
         searchController.searchResultsUpdater = self
+        searchController.searchBar.isHidden = true
         navigationItem.searchController = searchController
 
         view.addSubview(tableView)
@@ -70,7 +70,7 @@ private extension AssetViewController {
     func setupObservables() {
         viewModel?.items$
             .drive(tableView.rx.items(cellIdentifier: AssetTableViewCell.reuseIdentifier, cellType: AssetTableViewCell.self)) { _, itemViewModel, cell in
-                cell.bind(itemViewModel)
+                cell.bind(itemViewModel, isDarkMode: self.traitCollection.userInterfaceStyle == .dark)
             }
             .disposed(by: disposeBag)
     }
@@ -80,7 +80,9 @@ extension AssetViewController: UISearchBarDelegate, UISearchResultsUpdating {
     func updateSearchResults(for searchController: UISearchController) {
         if !searchController.isActive {
             viewModel?.filter(for: nil)
+            return
         }
+        let searchText = searchController.searchBar.text
     }
 
 

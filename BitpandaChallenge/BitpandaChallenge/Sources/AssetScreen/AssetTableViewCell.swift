@@ -15,7 +15,6 @@ class AssetTableViewCell: UITableViewCell {
     private let iconView: UIImageView = {
         let view = UIImageView()
         view.contentMode = .scaleAspectFill
-//        view.backgroundColor = .gray
         return view
     }()
 
@@ -58,6 +57,8 @@ class AssetTableViewCell: UITableViewCell {
         return stackView
     }()
 
+    var isDarkMode: Bool = false
+
     // MARK: - Properties
 
 
@@ -85,12 +86,13 @@ class AssetTableViewCell: UITableViewCell {
 
     // MARK: - Public
 
-    func bind(_ viewModel: AssetTableViewCellViewModel) {
+    func bind(_ viewModel: AssetTableViewCellViewModel, isDarkMode: Bool) {
         titleLabel.text = viewModel.title
         symbolLabel.text = viewModel.symbol
         priceLabel.text = viewModel.averagePrice
 
-        iconView.kf.setImage(with: viewModel.iconURL, options: [.processor(SVGImgProcessor())])
+        let url = isDarkMode ? viewModel.darkIconURL : viewModel.iconURL
+        iconView.kf.setImage(with: url, options: [.processor(SVGImgProcessor())])
     }
 }
 
