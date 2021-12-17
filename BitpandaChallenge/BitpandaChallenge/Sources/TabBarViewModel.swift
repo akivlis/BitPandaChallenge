@@ -10,9 +10,15 @@ import Combine
 
 struct TabBarViewModel {
 
-    private let assetsSubject = PassthroughSubject<[Asset], Never>()
-    private(set) lazy var assetsPublisher = assetsSubject
+    private(set) lazy var assetsPublisher = attributesSubject
+        .map { $0.assets }
         .eraseToAnyPublisher()
+
+    private let attributesSubject = PassthroughSubject<Attributes, Never>()
+    private(set) lazy var attributesPublisher = attributesSubject
+        .eraseToAnyPublisher()
+
+    // MARK: - Public
 
     func parseData() {
         if let path = Bundle.main.path(forResource: "Mastrerdata", ofType: "json") {
@@ -22,15 +28,12 @@ struct TabBarViewModel {
                 let masterData = try decoder.decode(MasterData.self, from: data)
                 print("masterData:\(masterData)")
 
-                let allAssets = masterData.data.attributes.assets
-                assetsSubject.send(allAssets)
+                attributesSubject.send(masterData.data.attributes)
             } catch let error {
                 print("parse error: \(error)")
             }
         } else {
             print("Invalid filename/path.")
         }
-
     }
-
 }

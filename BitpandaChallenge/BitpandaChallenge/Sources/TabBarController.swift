@@ -37,9 +37,6 @@ class TabBarController: UITabBarController {
 private extension TabBarController {
 
     func setupViews() {
-        tabBar.barTintColor = .red
-        tabBar.shadowImage = UIImage()
-        tabBar.backgroundImage = UIImage()
         tabBar.layer.masksToBounds = true
         let borderView = UIView(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: 1))
         borderView.backgroundColor = UIColor.gray
@@ -65,6 +62,13 @@ private extension TabBarController {
             .sink { [weak self ] assets in
                 guard let self = self else { return }
                 self.assetViewController.viewModel = AssetViewModel(assets: assets)
+            }
+            .store(in: &subscriptions)
+
+        viewModel.attributesPublisher
+            .sink { [weak self ] attributes in
+                guard let self = self else { return }
+                self.walletViewController.viewModel.attributes = attributes
             }
             .store(in: &subscriptions)
         

@@ -8,5 +8,6 @@
 import Foundation
 
 struct FiatWalletTableViewCellViewModel {
-    
+
+    let fiatWallet: FiatWallet
 }

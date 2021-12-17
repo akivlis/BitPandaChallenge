@@ -47,7 +47,7 @@ class AssetViewController: UIViewController {
 private extension AssetViewController {
 
     func setupViews() {
-        view.backgroundColor = .white
+        view.backgroundColor = UIColor.systemBackground
         title = Tab.asset.title
 
         navigationController?.navigationBar.prefersLargeTitles = true

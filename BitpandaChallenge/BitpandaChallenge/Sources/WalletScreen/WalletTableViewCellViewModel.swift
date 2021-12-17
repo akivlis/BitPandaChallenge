@@ -8,5 +8,10 @@
 import Foundation
 
 struct WalletTableViewCellViewModel {
-    
+
+    // MARK: - Properties
+
+    let wallet: Wallet
+
+
 }

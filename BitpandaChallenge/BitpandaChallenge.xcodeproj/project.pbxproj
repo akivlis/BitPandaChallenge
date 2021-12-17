@@ -39,6 +39,7 @@
 		3DFF79D7276BDF6B005A9A35 /* WalletTableViewCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DFF79D6276BDF6B005A9A35 /* WalletTableViewCellViewModel.swift */; };
 		3DFF79D9276BDF7B005A9A35 /* FiatWalletTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DFF79D8276BDF7B005A9A35 /* FiatWalletTableViewCell.swift */; };
 		3DFF79DB276BDF91005A9A35 /* FiatWalletTableViewCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DFF79DA276BDF91005A9A35 /* FiatWalletTableViewCellViewModel.swift */; };
+		3DFF79DD276C8891005A9A35 /* WalletSectionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DFF79DC276C8891005A9A35 /* WalletSectionModel.swift */; };
 		7EBD73B8228D27B6357F0441 /* Pods_BitpandaChallenge_BitpandaChallengeUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 390BE589C61C7AB3FCCAC735 /* Pods_BitpandaChallenge_BitpandaChallengeUITests.framework */; };
 		9B2F3D63D775960FE4467F89 /* Pods_BitpandaChallenge.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 44E18D82076658DC30AF0921 /* Pods_BitpandaChallenge.framework */; };
 		E214E50B1039357AEDA9028B /* Pods_BitpandaChallengeTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6424BC8BD27331AAD818ACFB /* Pods_BitpandaChallengeTests.framework */; };
@@ -97,6 +98,7 @@
 		3DFF79D6276BDF6B005A9A35 /* WalletTableViewCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletTableViewCellViewModel.swift; sourceTree = "<group>"; };
 		3DFF79D8276BDF7B005A9A35 /* FiatWalletTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FiatWalletTableViewCell.swift; sourceTree = "<group>"; };
 		3DFF79DA276BDF91005A9A35 /* FiatWalletTableViewCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FiatWalletTableViewCellViewModel.swift; sourceTree = "<group>"; };
+		3DFF79DC276C8891005A9A35 /* WalletSectionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletSectionModel.swift; sourceTree = "<group>"; };
 		44E18D82076658DC30AF0921 /* Pods_BitpandaChallenge.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BitpandaChallenge.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5E2AE5803926F8FEFAD2985B /* Pods-BitpandaChallenge-BitpandaChallengeUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BitpandaChallenge-BitpandaChallengeUITests.release.xcconfig"; path = "Target Support Files/Pods-BitpandaChallenge-BitpandaChallengeUITests/Pods-BitpandaChallenge-BitpandaChallengeUITests.release.xcconfig"; sourceTree = "<group>"; };
 		6424BC8BD27331AAD818ACFB /* Pods_BitpandaChallengeTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BitpandaChallengeTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -208,6 +210,7 @@
 				3DFF79D6276BDF6B005A9A35 /* WalletTableViewCellViewModel.swift */,
 				3DFF79D8276BDF7B005A9A35 /* FiatWalletTableViewCell.swift */,
 				3DFF79DA276BDF91005A9A35 /* FiatWalletTableViewCellViewModel.swift */,
+				3DFF79DC276C8891005A9A35 /* WalletSectionModel.swift */,
 			);
 			path = WalletScreen;
 			sourceTree = "<group>";
@@ -532,6 +535,7 @@
 				3D3FFF032760CE7900744A30 /* AssetViewController.swift in Sources */,
 				3D3FFECC27592F7D00744A30 /* AppDelegate.swift in Sources */,
 				3D3FFF172769E90500744A30 /* TabBarViewModel.swift in Sources */,
+				3DFF79DD276C8891005A9A35 /* WalletSectionModel.swift in Sources */,
 				3D3FFECE27592F7D00744A30 /* SceneDelegate.swift in Sources */,
 				3D3FFF1D276B642400744A30 /* AssetViewModel.swift in Sources */,
 				3D3FFF052760CE8D00744A30 /* WalletViewController.swift in Sources */,

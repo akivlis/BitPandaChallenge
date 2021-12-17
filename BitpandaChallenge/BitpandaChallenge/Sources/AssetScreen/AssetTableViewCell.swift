@@ -12,6 +12,8 @@ import SVGKit
 
 class AssetTableViewCell: UITableViewCell {
 
+    // MARK: - Views
+
     private let iconView: UIImageView = {
         let view = UIImageView()
         view.contentMode = .scaleAspectFill
