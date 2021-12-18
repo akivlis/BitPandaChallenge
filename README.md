@@ -3,4 +3,4 @@ Case Study for Bitpanda
 
 |Dark mode| Light Mode|
 |-|-|
-|![crypto-dark](https://user-images.githubusercontent.com/32448186/146643530-13e1edf6-ea02-4d0f-9b5d-70615086bdb2.gif)|![crypto](https://user-images.githubusercontent.com/32448186/146643533-ad751f15-a9f2-4e31-a5dc-39aa9586614d.gif)|
+|![dark](https://user-images.githubusercontent.com/32448186/146643798-18352dec-d32e-444a-b259-c7cebe46c867.gif)|![light](https://user-images.githubusercontent.com/32448186/146643802-7f42082d-3eaa-47e1-913b-18e14df63e13.gif)|
