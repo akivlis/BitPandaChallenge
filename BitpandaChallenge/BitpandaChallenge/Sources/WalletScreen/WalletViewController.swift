@@ -86,18 +86,15 @@ private extension WalletViewController {
 
     func makeWalletCell(with cellViewModel: WalletTableViewCellViewModel, at indexPath: IndexPath) -> UITableViewCell {
         let cell: WalletTableViewCell = tableView.dequeueReusableCell(for: indexPath)
-        cell.bind(cellViewModel)
+        cell.bind(cellViewModel, isDarkMode: self.traitCollection.userInterfaceStyle == .dark)
         return cell
     }
 
     func makeFiatWalletCell(with cellViewModel: FiatWalletTableViewCellViewModel, at indexPath: IndexPath) -> UITableViewCell {
         let cell: FiatWalletTableViewCell = tableView.dequeueReusableCell(for: indexPath)
-        cell.bind(cellViewModel)
+        cell.bind(cellViewModel, isDarkMode: self.traitCollection.userInterfaceStyle == .dark)
         return cell
     }
-
-
-
 }
 
 // MARK: - UITableViewDelegate

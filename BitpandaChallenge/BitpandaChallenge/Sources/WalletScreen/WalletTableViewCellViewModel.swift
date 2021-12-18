@@ -13,6 +13,7 @@ struct WalletTableViewCellViewModel {
     // MARK: - Properties
 
     let wallet: Wallet
+    let icons: Icons?
 
     var title: String {
         return wallet.name
@@ -28,8 +29,8 @@ struct WalletTableViewCellViewModel {
 
     var backgroundColor: UIColor {
         if wallet.isDefault {
-            return UIColor.systemBlue.withAlphaComponent(0.1)
+            return UIColor.systemCyan.withAlphaComponent(0.1)
         }
-        return UIColor.systemGray.withAlphaComponent(0.1)
+        return UIColor.systemCyan.withAlphaComponent(0.3)
     }
 }

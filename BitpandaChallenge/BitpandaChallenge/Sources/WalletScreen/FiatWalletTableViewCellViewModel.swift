@@ -12,6 +12,7 @@ struct FiatWalletTableViewCellViewModel {
     // MARK: - Properties
 
     let fiatWallet: FiatWallet
+    let icons: Icons?
 
     var title: String {
         return fiatWallet.name

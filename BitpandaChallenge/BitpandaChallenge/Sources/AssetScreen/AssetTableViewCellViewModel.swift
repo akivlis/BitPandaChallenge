@@ -12,11 +12,11 @@ struct AssetTableViewCellViewModel {
     let asset: Asset
 
     var iconURL: URL? {
-        return asset.icon
+        return asset.icons.lightIcon
     }
 
     var darkIconURL: URL? {
-        return asset.darkIcon
+        return asset.icons.darkIcon
     }
 
     var title: String {

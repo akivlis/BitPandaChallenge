@@ -14,7 +14,6 @@ class WalletTableViewCell: UITableViewCell {
     private let iconView: UIImageView = {
         let view = UIImageView()
         view.contentMode = .scaleAspectFill
-        view.backgroundColor = .systemBlue
         return view
     }()
 
@@ -89,12 +88,14 @@ class WalletTableViewCell: UITableViewCell {
 
     // MARK: - Public
 
-    func bind(_ viewModel: WalletTableViewCellViewModel) {
+    func bind(_ viewModel: WalletTableViewCellViewModel, isDarkMode: Bool) {
         roundView.backgroundColor = viewModel.backgroundColor
         titleLabel.text = viewModel.title
         balanceLabel.text = viewModel.balance
         symbolLabel.text = viewModel.symbol
-//        iconView.image =
+
+        let url = isDarkMode ? viewModel.icons?.darkIcon : viewModel.icons?.lightIcon
+        iconView.kf.setImage(with: url, options: [.processor(SVGImgProcessor())])
     }
 
 }

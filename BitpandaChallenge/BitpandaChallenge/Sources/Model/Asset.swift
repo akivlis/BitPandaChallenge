@@ -11,9 +11,7 @@ protocol Asset {
 
     var type: AssetType { get }
 
-    var icon: URL? { get }
-
-    var darkIcon: URL? { get }
+    var icons: Icons { get }
 
     var name: String { get }
 
