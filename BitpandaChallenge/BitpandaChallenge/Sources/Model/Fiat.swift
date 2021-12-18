@@ -14,6 +14,7 @@ struct Fiat {
     let icons: Icons
     let name: String
     let symbol: String
+    let hasWallets: Bool
 }
 
 // - MARK: Asset
@@ -35,6 +36,7 @@ extension Fiat: Decodable {
         let darkIconString = try attributes.decode(String.self, forKey: .darkIcon)
         let darkIcon = URL(string: darkIconString)
         icons = (icon, darkIcon)
+        hasWallets = try attributes.decode(Bool.self, forKey: .hasWallets)
     }
 
     private enum CodingKeys: String, CodingKey {
@@ -48,6 +50,7 @@ extension Fiat: Decodable {
         case icon = "logo"
         case darkIcon = "logo_dark"
         case name
+        case hasWallets = "has_wallets"
     }
 }
 

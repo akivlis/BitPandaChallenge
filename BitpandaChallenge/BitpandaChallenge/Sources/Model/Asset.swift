@@ -18,11 +18,17 @@ protocol Asset {
     var symbol: String { get }
 
     var averagePrice: String? { get }
+
+    var hasWallets: Bool { get }
 }
 
 extension Asset {
     var averagePrice: String? {
         return nil
+    }
+
+    var hasWallets: Bool {
+        return true
     }
 }
 

@@ -24,8 +24,9 @@ struct AssetViewModel {
     // MARK: Init
 
     init(assets: [Asset]) {
-        self.allAssets = assets
-        self.filteredAssets = BehaviorRelay(value: assets)
+        // remove fiats which have no wallets
+        self.allAssets = assets.filter { $0.hasWallets }
+        self.filteredAssets = BehaviorRelay(value: allAssets)
     }
 
     /// Filter for assets based on its type

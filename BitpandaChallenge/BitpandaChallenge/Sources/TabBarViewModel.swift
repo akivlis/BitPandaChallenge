@@ -26,8 +26,6 @@ struct TabBarViewModel {
                 let data = try Data(contentsOf: URL(fileURLWithPath: path), options: .mappedIfSafe)
                 let decoder = JSONDecoder()
                 let masterData = try decoder.decode(MasterData.self, from: data)
-                print("masterData:\(masterData)")
-
                 attributesSubject.send(masterData.data.attributes)
             } catch let error {
                 print("parse error: \(error)")
