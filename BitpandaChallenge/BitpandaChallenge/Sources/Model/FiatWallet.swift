@@ -9,7 +9,7 @@ import Foundation
 
 struct FiatWallet {
     let name: String
-    let balance: String
+    let balance: Float
     let fiatId: String
     let fiatSymbol: String
 }
@@ -22,7 +22,8 @@ extension FiatWallet: Decodable {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         let attributes = try container.nestedContainer(keyedBy: AttributesCodingKeys.self, forKey: .attributes)
         name = try attributes.decode(String.self, forKey: .name)
-        balance = try attributes.decode(String.self, forKey: .balance)
+        let balanceString = try attributes.decode(String.self, forKey: .balance)
+        balance = Float(balanceString) ?? 0.0
         fiatId = try attributes.decode(String.self, forKey: .fiatId)
         fiatSymbol = try attributes.decode(String.self, forKey: .fiatSymbol)
     }

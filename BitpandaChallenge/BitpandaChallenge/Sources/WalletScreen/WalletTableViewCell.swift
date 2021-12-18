@@ -14,19 +14,20 @@ class WalletTableViewCell: UITableViewCell {
     private let iconView: UIImageView = {
         let view = UIImageView()
         view.contentMode = .scaleAspectFill
+        view.backgroundColor = .systemBlue
         return view
     }()
 
     private let titleLabel: UILabel = {
         let label = UILabel()
-        label.font = .systemFont(ofSize: 18, weight: .bold)
+        label.font = .systemFont(ofSize: 17, weight: .semibold)
         label.contentMode = .left
         return label
     }()
 
     private let balanceLabel: UILabel = {
         let label = UILabel()
-        label.font = .systemFont(ofSize: 15)
+        label.font = .systemFont(ofSize: 18)
         label.contentMode = .right
         return label
     }()
@@ -45,6 +46,21 @@ class WalletTableViewCell: UITableViewCell {
         stackView.distribution = .fill
         stackView.spacing = 8
         return stackView
+    }()
+
+    private let verticalStackView: UIStackView = {
+        let stackView = UIStackView()
+        stackView.axis = .vertical
+        stackView.alignment = .leading
+        stackView.distribution = .fill
+        stackView.spacing = 8
+        return stackView
+    }()
+
+    private let roundView: UIView = {
+        let view = UIView()
+        view.layer.cornerRadius = 10
+        return view
     }()
 
 
@@ -74,9 +90,10 @@ class WalletTableViewCell: UITableViewCell {
     // MARK: - Public
 
     func bind(_ viewModel: WalletTableViewCellViewModel) {
-        titleLabel.text = viewModel.wallet.name
-        balanceLabel.text = viewModel.wallet.balance
-        symbolLabel.text = viewModel.wallet.cryptocoinSymbol
+        roundView.backgroundColor = viewModel.backgroundColor
+        titleLabel.text = viewModel.title
+        balanceLabel.text = viewModel.balance
+        symbolLabel.text = viewModel.symbol
 //        iconView.image =
     }
 
@@ -87,20 +104,31 @@ class WalletTableViewCell: UITableViewCell {
 private extension WalletTableViewCell {
 
     func setupViews() {
-        contentView.addSubview(containerStackView)
+        contentView.backgroundColor = .systemBackground
+        contentView.addSubview(roundView)
+        roundView.addSubview(containerStackView)
 
-        containerStackView.addArrangedSubview(iconView)
-        containerStackView.addArrangedSubview(titleLabel)
-        containerStackView.addArrangedSubview(symbolLabel)
+        verticalStackView.addArrangedSubview(titleLabel)
+        verticalStackView.addArrangedSubview(iconView)
+
+        containerStackView.addArrangedSubview(verticalStackView)
         containerStackView.addArrangedSubview(balanceLabel)
+        containerStackView.addArrangedSubview(symbolLabel)
     }
 
     func setupConstraints() {
+        roundView.snp.makeConstraints { make in
+            make.leading.trailing.equalToSuperview()
+                .inset(12)
+            make.top.bottom.equalToSuperview()
+                .inset(8)
+        }
+
         containerStackView.snp.makeConstraints { make in
             make.leading.trailing.equalToSuperview()
-                .inset(20)
+                .inset(10)
             make.top.bottom.equalToSuperview()
-                .inset(12)
+                .inset(10)
         }
 
         iconView.snp.makeConstraints { make in
@@ -109,4 +137,3 @@ private extension WalletTableViewCell {
         }
     }
 }
-

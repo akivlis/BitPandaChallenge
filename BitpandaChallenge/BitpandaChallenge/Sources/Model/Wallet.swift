@@ -9,7 +9,7 @@ import Foundation
 
 struct Wallet {
     let name: String
-    let balance: String
+    let balance: Float
     let cryptocoinId: String
     let cryptocoinSymbol: String
     let isDefault: Bool
@@ -24,7 +24,8 @@ extension Wallet: Decodable {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         let attributes = try container.nestedContainer(keyedBy: AttributesCodingKeys.self, forKey: .attributes)
         name = try attributes.decode(String.self, forKey: .name)
-        balance = try attributes.decode(String.self, forKey: .balance)
+        let balanceString = try attributes.decode(String.self, forKey: .balance)
+        balance = Float(balanceString) ?? 0.0
         cryptocoinId = try attributes.decode(String.self, forKey: .cryptocoinId)
         cryptocoinSymbol = try attributes.decode(String.self, forKey: .cryptocoinSymbol)
         isDefault = try attributes.decode(Bool.self, forKey: .isDefault)

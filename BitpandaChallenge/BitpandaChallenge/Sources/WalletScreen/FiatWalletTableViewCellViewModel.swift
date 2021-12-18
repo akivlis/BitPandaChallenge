@@ -9,5 +9,19 @@ import Foundation
 
 struct FiatWalletTableViewCellViewModel {
 
+    // MARK: - Properties
+
     let fiatWallet: FiatWallet
+
+    var title: String {
+        return fiatWallet.name
+    }
+
+    var balance: String? {
+        return String(fiatWallet.balance)
+    }
+
+    var symbol: String {
+        return fiatWallet.fiatSymbol
+    }
 }

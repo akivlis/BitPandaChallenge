@@ -38,16 +38,21 @@ class WalletViewModel {
 
         // wallets
         let walletItems = attributes.wallets
+            .filter { !$0.isDeleted }
+            .sorted { $0.balance > $1.balance }
             .map { WalletSectionCell.wallet(WalletTableViewCellViewModel(wallet: $0)) }
         sections.append( WalletSectionModel.wallets(items: walletItems))
 
         // commodityWallets
         let commodityWalletItems = attributes.commodityWallets
+            .filter { !$0.isDeleted }
+            .sorted { $0.balance > $1.balance }
             .map { WalletSectionCell.wallet(WalletTableViewCellViewModel(wallet: $0)) }
         sections.append(WalletSectionModel.commodityWallets(items: commodityWalletItems))
 
         // fiatWallets
         let fiatWalletItems = attributes.fiatWallets
+            .sorted { $0.balance > $1.balance }
             .map { WalletSectionCell.fiatWallet(FiatWalletTableViewCellViewModel(fiatWallet: $0)) }
         sections.append( WalletSectionModel.fiatWallets(items: fiatWalletItems))
 

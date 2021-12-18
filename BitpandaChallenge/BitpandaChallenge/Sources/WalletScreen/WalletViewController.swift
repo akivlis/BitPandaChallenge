@@ -8,6 +8,7 @@
 import UIKit
 import RxDataSources
 import RxSwift
+import SwiftUI
 
 class WalletViewController: UIViewController {
 
@@ -17,7 +18,7 @@ class WalletViewController: UIViewController {
         let tableView = UITableView(frame: .zero, style: .grouped)
         tableView.backgroundColor = .clear
         tableView.tableFooterView = UIView()
-        tableView.allowsSelection = true
+        tableView.allowsSelection = false
         tableView.separatorStyle = .none
         tableView.rowHeight = UITableView.automaticDimension
         tableView.alwaysBounceVertical = false
@@ -105,9 +106,21 @@ extension WalletViewController: UITableViewDelegate {
 
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let sectionModel = dataSource.sectionModels[section]
-        let headerTitleView = UILabel()
-        headerTitleView.text = sectionModel.title
-        return headerTitleView
+        let view = UIView()
+
+        let titleLabel: UILabel = {
+            let label = UILabel()
+            label.font = .systemFont(ofSize: 20, weight: .semibold)
+            label.contentMode = .left
+            label.text = sectionModel.title
+            return label
+        }()
+
+        view.addSubview(titleLabel)
+        titleLabel.snp.makeConstraints { make in
+            make.edges.equalToSuperview().inset(12)
+        }
+        return view
     }
 }
 

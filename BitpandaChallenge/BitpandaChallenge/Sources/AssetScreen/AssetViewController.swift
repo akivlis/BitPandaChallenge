@@ -49,13 +49,12 @@ private extension AssetViewController {
     func setupViews() {
         view.backgroundColor = UIColor.systemBackground
         title = Tab.asset.title
-
         navigationController?.navigationBar.prefersLargeTitles = true
 
         searchController.searchBar.scopeButtonTitles = AssetType.allCases.map { $0.rawValue.capitalized }
         searchController.searchBar.delegate = self
         searchController.searchResultsUpdater = self
-        searchController.searchBar.isHidden = true
+        searchController.searchBar.isHidden = false
         navigationItem.searchController = searchController
 
         view.addSubview(tableView)
