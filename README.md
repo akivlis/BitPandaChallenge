@@ -1,5 +1,5 @@
 # BitPandaChallenge
-Case Study for Bitpanda
+Case Study for Bitpanda written in SwiftUI
 
 |Dark mode| Light Mode|
 |-|-|
